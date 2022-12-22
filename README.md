@@ -5,10 +5,11 @@
 
 ## 使用方法
 
-1. 安装配置 postgresql
-2. 填写 config.ini 信息
-3. ./vpnHelper gt 生成授权 token
-4. ./vpnHelper r 生产环境运行（可以用 nohup 或 screen 挂后台，注意运行时需要使路径在项目目录内）
+1. 安装 Chrome （里面用到了 Headless Chrome）
+2. 安装配置 postgresql
+3. 填写 config.ini 信息
+4. ./vpnHelper gt 生成授权 token
+5. ./vpnHelper r 生产环境运行（可以用 nohup 或 screen 挂后台，注意运行时需要使路径在项目目录内）
 
 ## API 功能
 
