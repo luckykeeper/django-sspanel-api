@@ -55,7 +55,7 @@ func vpnHelperCLI() {
 			"\nPowered By Luckykeeper <luckykeeper@luckykeeper.site | https://luckykeeper.site>" +
 			"\n————————————————————————————————————————" +
 			"\n注意：使用前需要先填写同目录下 config.ini !",
-		Version: "1.0.0_build20221214",
+		Version: "1.0.1_build20221224",
 		Commands: []*cli.Command{
 			{
 				Name:    "runProd",

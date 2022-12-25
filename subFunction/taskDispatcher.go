@@ -21,6 +21,12 @@ func TaskDispatcher(PanelWebAddress, PanelWebPort, PanelWebUsername, PanelWebPas
 		GetConnNodeInfo(PanelWebAddress, PanelWebPort, PanelWebUsername, PanelWebPassword,
 			VpnHelperDBAddress, VpnHelperDBPort, VpnHelperDBUsername, VpnHelperDBPassword, VpnHelperDBName)
 		os.Remove(processTagFolder + "/TaskDispatcher")
+		// 2022年12月24日 - 修复正在运行某操作过程中节点信息过期导致卡在 “connNodeInfoOutDate” 的问题
+	} else if getConnNodeInfoProcessing, _ := PathExists(processTagFolder + "/getConnNodeInfoProcessing"); !getConnNodeInfoProcessing && taskDispatcherTag && status == "connNodeInfoOutDate" {
+		log.Println("定时任务 - 执行任务调度 - 更新节点信息（补充执行）")
+		GetConnNodeInfo(PanelWebAddress, PanelWebPort, PanelWebUsername, PanelWebPassword,
+			VpnHelperDBAddress, VpnHelperDBPort, VpnHelperDBUsername, VpnHelperDBPassword, VpnHelperDBName)
+		os.Remove(processTagFolder + "/TaskDispatcher")
 	} else if taskDispatcherTag, _ := PathExists(processTagFolder + "/TaskDispatcher"); !taskDispatcherTag || status == "idle" {
 		os.Create(processTagFolder + "/TaskDispatcher")
 		// 先检查是否有执行 Tag 存在，如果没有再定时执行
