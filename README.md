@@ -1,5 +1,5 @@
 # django-sspanel-api
-[django-sspanel](https://github.com/Ehco1996/django-sspanel) 的 API ，方便实现内部 VPN 系统和外部 OA 等系统对接
+[django-sspanel](https://github.com/Ehco1996/django-sspanel) 的第三方中间件 ，方便实现内部 VPN 系统和外部 OA 等系统对接
 
 基于 [django-sspanel](https://github.com/Ehco1996/django-sspanel)  Feb 2, 2021  版本开发，不同版本可能需要微调代码
 
